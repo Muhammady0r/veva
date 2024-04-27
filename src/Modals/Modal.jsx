@@ -1,12 +1,8 @@
-import { useState } from "react";
-import LogIn from "./LogIn";
-
-function Modal() {
-  const [active, setActive] = useState(false);
-
+// eslint-disable-next-line react/prop-types
+function Modal({ children, active, setActive }) {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] flex justify-center items-center">
-      <div className="flex-col w-[464px] h-[392px]">
+      <div className="flex-col w-[464px] h-auto">
         <div className="flex justify-start">
           <p
             onClick={() => setActive(false)}
@@ -44,7 +40,7 @@ function Modal() {
               fill="#A8A8A8"
             />
           </svg>
-          <LogIn active={active} />
+          {children}
         </div>
       </div>
     </div>

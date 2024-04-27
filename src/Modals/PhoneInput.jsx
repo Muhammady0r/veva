@@ -1,17 +1,10 @@
 import { useState } from "react";
 import styles from "./phoneInput.module.css";
 
-// function formattedPhoneNumber() {}
-// let lastKeyword = '';
-
 // eslint-disable-next-line react/prop-types
 function PhoneInput() {
   const [phone, setPhone] = useState("");
   const [lastKeyword, setLastKeyword] = useState("");
-
-  /*   if (phone[2] !== " ") {
-    Array.from(phone).splice(2, 1, " ").toString();
-  } */
 
   if (phone.length == 2 && lastKeyword !== "Backspace") {
     setPhone(phone + " ");
@@ -22,8 +15,6 @@ function PhoneInput() {
   } else {
     phone;
   }
-
-  // console.log(phone);
 
   return (
     <div className="w-full text-start flex">
