@@ -1,12 +1,14 @@
 import { useState } from "react";
 import logo from "/logo.png";
 import "./App.css";
+import Modal from "./Modals/Modal";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      <Modal />
       <div>
         <a href="https://meedweff.vercel.app" target="_blank">
           <img src={logo} className="logo" alt="logo" />
