@@ -1,5 +1,5 @@
-import Button from "./Button";
-import CodeInput from "./CodeInput";
+import Button from "./UIelements/Button";
+import CodeInput from "./UIelements/CodeInput";
 
 // eslint-disable-next-line react/prop-types
 function Confirmation() {

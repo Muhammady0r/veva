@@ -1,6 +1,6 @@
-import Button from "./Button";
-import PhoneInput from "./PhoneInput";
-import TextInput from "./TextInput";
+import Button from "./UIelements/Button";
+import PhoneInput from "./UIelements/PhoneInput";
+import TextInput from "./UIelements/TextInput";
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function LogIn({ active, setActive }) {

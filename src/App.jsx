@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-      {/* <LogIn active={active} setActive={setActive} /> */}
       <Modal active={active} setActive={setActive}>
+        {/* <LogIn active={active} setActive={setActive} /> */}
         <Confirmation active={active} setActive={setActive} />
       </Modal>
       <div>
