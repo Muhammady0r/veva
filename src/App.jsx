@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "/logo.png";
 import "./App.css";
+import Slider from "./Components/Slider/Slider";
 // import Modal from "./Modals/Modal";
 // import Agreement from "./Modals/Agreement";
 // import SignUp from "./Modals/SignUp";
@@ -19,7 +20,8 @@ function App() {
       {/* <SignUp active={active} /> */}
       {/* <Agreement /> */}
       {/* </Modal> */}
-      <div>
+      <Slider />
+      {/* <div>
         <a href="https://meedweff.vercel.app" target="_blank">
           <img src={logo} className="logo" alt="logo" />
         </a>
@@ -35,7 +37,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the MeedWeff logo to go to website
-      </p>
+      </p> */}
     </>
   );
 }

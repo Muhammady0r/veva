@@ -12,7 +12,7 @@ function Modal({ children, active, setActive, agreement }) {
             <p
               onClick={() => setActive(false)}
               className={`relative z-[2] flex items-center justify-center font-bold text-[18px] leading-[156%] rounded-tl-[10px] w-[146px] h-[62px] ${
-                active
+                !active
                   ? "hover:cursor-pointer bg-[rgba(255,255,255,.3)] backdrop-blur-[40px]"
                   : "bg-white hover:cursor-default text-[#1CBBEE] rounded-tr-[10px]"
               }`}
@@ -22,7 +22,7 @@ function Modal({ children, active, setActive, agreement }) {
             <p
               onClick={() => setActive(true)}
               className={`relative z-[1] flex items-center justify-end pr-[28px] font-bold text-[18px] leading-[156%] rounded-tr-[10px]  h-[62px] ${
-                active
+                !active
                   ? " bg-white text-center hover:cursor-default text-[#1CBBEE] w-[146px] left-0"
                   : "hover:cursor-pointer bg-[#a6a6a6] bg-[rgba(255,255,255,.3)] backdrop-blur-[40px] w-[163px] -left-[17px]"
               }`}
