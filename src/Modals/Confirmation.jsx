@@ -6,7 +6,9 @@ function Confirmation() {
   // return active ? <CodeInput /> : <CodeInput />;
   return (
     <>
-      <h4 className="font-bold text-[32px] text-start">Введите код из СМС</h4>
+      <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
+        Введите код из СМС
+      </h4>
       <div className="mt-[24px] mb-[30px]">
         <CodeInput />
       </div>

@@ -1,32 +1,44 @@
 // eslint-disable-next-line react/prop-types
-function Modal({ children, active, setActive }) {
+function Modal({ children, active, setActive, agreement }) {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] flex justify-center items-center">
-      <div className="flex-col w-[464px] h-auto">
-        <div className="flex justify-start">
-          <p
-            onClick={() => setActive(false)}
-            className={`relative z-[2] flex items-center justify-center font-bold text-[18px] leading-[156%] rounded-tl-[10px] w-[146px] h-[62px] ${
-              active
-                ? "hover:cursor-pointer bg-[rgba(255,255,255,.3)] backdrop-blur-[40px]"
-                : "bg-white hover:cursor-default text-[#1CBBEE] rounded-tr-[10px]"
-            }`}
-          >
-            Физ. лицо
-          </p>
-          <p
-            onClick={() => setActive(true)}
-            className={`relative z-[1] flex items-center justify-end pr-[28px] font-bold text-[18px] leading-[156%] rounded-tr-[10px]  h-[62px] ${
-              active
-                ? " bg-white text-center hover:cursor-default text-[#1CBBEE] w-[146px] left-0"
-                : "hover:cursor-pointer bg-[#a6a6a6] bg-[rgba(255,255,255,.3)] backdrop-blur-[40px] w-[163px] -left-[17px]"
-            }`}
-          >
-            Юр. лицо
-          </p>
-        </div>
+      <div
+        className={`flex-col ${
+          agreement ? "w-[682px] h-[728px]" : "w-[464px]"
+        }`}
+      >
+        {agreement ? null : (
+          <div className="flex justify-start">
+            <p
+              onClick={() => setActive(false)}
+              className={`relative z-[2] flex items-center justify-center font-bold text-[18px] leading-[156%] rounded-tl-[10px] w-[146px] h-[62px] ${
+                active
+                  ? "hover:cursor-pointer bg-[rgba(255,255,255,.3)] backdrop-blur-[40px]"
+                  : "bg-white hover:cursor-default text-[#1CBBEE] rounded-tr-[10px]"
+              }`}
+            >
+              Физ. лицо
+            </p>
+            <p
+              onClick={() => setActive(true)}
+              className={`relative z-[1] flex items-center justify-end pr-[28px] font-bold text-[18px] leading-[156%] rounded-tr-[10px]  h-[62px] ${
+                active
+                  ? " bg-white text-center hover:cursor-default text-[#1CBBEE] w-[146px] left-0"
+                  : "hover:cursor-pointer bg-[#a6a6a6] bg-[rgba(255,255,255,.3)] backdrop-blur-[40px] w-[163px] -left-[17px]"
+              }`}
+            >
+              Юр. лицо
+            </p>
+          </div>
+        )}
 
-        <div className="relative bg-white px-7 pt-9 pb-[42px] rounded-e-[20px] rounded-bl-[20px]">
+        <div
+          className={`relative bg-white px-7 pt-9 pb-[42px] ${
+            agreement
+              ? "rounded-ss-[20px] h-[728px] pr-5"
+              : "rounded - ss - none"
+          } rounded-e-[20px] rounded-bl-[20px]`}
+        >
           <svg
             width="21"
             height="20"

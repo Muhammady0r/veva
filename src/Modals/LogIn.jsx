@@ -3,10 +3,10 @@ import PhoneInput from "./UIelements/PhoneInput";
 import TextInput from "./UIelements/TextInput";
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function LogIn({ active, setActive }) {
+function LogIn({ active }) {
   return active ? (
     <>
-      <h4 className="font-bold text-[32px] text-start">
+      <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
         Вход в личный кабинет
       </h4>
       <div className="my-6">
@@ -37,7 +37,7 @@ function LogIn({ active, setActive }) {
     </>
   ) : (
     <>
-      <h4 className="font-bold text-[32px] text-start">
+      <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
         Вход в личный кабинет
       </h4>
       <div className="mt-6 mb-[30px]">

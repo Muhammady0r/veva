@@ -1,20 +1,24 @@
 import { useState } from "react";
 import logo from "/logo.png";
 import "./App.css";
-import Modal from "./Modals/Modal";
+// import Modal from "./Modals/Modal";
+// import Agreement from "./Modals/Agreement";
+// import SignUp from "./Modals/SignUp";
 // import LogIn from "./Modals/LogIn";
-import Confirmation from "./Modals/Confirmation";
+// import Confirmation from "./Modals/Confirmation";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
   return (
     <>
-      <Modal active={active} setActive={setActive}>
-        {/* <LogIn active={active} setActive={setActive} /> */}
-        <Confirmation active={active} setActive={setActive} />
-      </Modal>
+      {/* <Modal active={active} setActive={setActive}> */}
+      {/* <LogIn active={active}  /> */}
+      {/* <Confirmation active={active}  /> */}
+      {/* <SignUp active={active} /> */}
+      {/* <Agreement /> */}
+      {/* </Modal> */}
       <div>
         <a href="https://meedweff.vercel.app" target="_blank">
           <img src={logo} className="logo" alt="logo" />
