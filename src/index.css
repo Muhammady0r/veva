@@ -289,6 +289,7 @@
 header {
   max-width: 1280px;
   font-weight: 600;
+  margin: 0 auto;
 }
 
 .borderr-1 {
@@ -433,6 +434,9 @@ header {
   border-radius: 50%;
   cursor: pointer;
 }
+header button {
+  display: none;
+}
 
 @media (max-width: 2000px) {
   header button {
@@ -454,9 +458,6 @@ header {
   }
 }
 @media (max-width: 700px) {
-  header {
-    /* max-width: 342.96px; */
-  }
   .links {
     display: none;
   }
