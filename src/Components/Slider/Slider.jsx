@@ -18,13 +18,13 @@ function App() {
         grabCursor={true}
         centeredSlides={false}
         loop={true}
-        slidesPerView={"1.01"}
+        slidesPerView={"1"}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
           depth: 100,
           modifier: 2.5,
-          slideShadows: false,
+          // slideShadows: false,
         }}
         pagination={{ clickable: true }}
         // pagination={{ el: ".swiper-pagination", clickable: true }}
@@ -35,7 +35,7 @@ function App() {
         }}
         className="swiper_container"
       >
-        <SwiperSlide>
+        <SwiperSlide className="rounded-2xl">
           <div className="txt">
             <p className="title">
               Круглосуточная доставка <span>24/7</span>

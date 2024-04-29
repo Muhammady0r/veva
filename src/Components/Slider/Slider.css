@@ -5,7 +5,7 @@
     }
 
     .swiper-slide {
-      border-radius: 40px;
+      border-radius: 40px !important;
       display: flex;
       padding: 50px;
       justify-content: space-between;
@@ -70,7 +70,9 @@
 
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
-  background: rgba(255, 255, 255, 0.096);
+  background: rgba(255, 255, 255, 0.048);
+  opacity: 0.1;
+  border-radius: 40px;
 }
 
 .swiper-pagination-bullet {
