@@ -24,6 +24,7 @@ function App() {
           stretch: 0,
           depth: 100,
           modifier: 2.5,
+          slideShadows: false,
         }}
         pagination={{ clickable: true }}
         // pagination={{ el: ".swiper-pagination", clickable: true }}
