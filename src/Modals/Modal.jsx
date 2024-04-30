@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-function Modal({ children, active, setActive, agreement }) {
+function Modal({
+  children,
+  active,
+  setActive,
+  agreement,
+  height = "728px",
+  pr,
+}) {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] flex justify-center items-center">
       <div
         className={`flex-col ${
-          agreement ? "w-[682px] h-[728px]" : "w-[464px]"
+          agreement ? `w-[682px] h-[${height}]` : `w-[464px]`
         }`}
       >
         {agreement ? null : (
@@ -33,10 +41,10 @@ function Modal({ children, active, setActive, agreement }) {
         )}
 
         <div
-          className={`relative bg-white px-7 pt-9 pb-[42px] ${
+          className={`relative bg-white px-[clamp(16px,1.8vw,28px)] pt-9 pb-[42px] ${
             agreement
-              ? "rounded-ss-[20px] h-[728px] pr-5"
-              : "rounded - ss - none"
+              ? `rounded-ss-[20px]  h-[${height}] pr-[${pr}]}`
+              : `rounded - ss - none`
           } rounded-e-[20px] rounded-bl-[20px]`}
         >
           <svg

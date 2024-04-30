@@ -17,7 +17,7 @@ function LogIn({ active }) {
       <div className="flex items-center gap-[10px] mt-6 mb-[30px]">
         <input
           type="checkbox"
-          className="w-6 h-6 bg-[#e4eaf3] outline-none border-none appearance-none rounded-[4px] cursor-pointer"
+          className="w-6 h-6 bg-[#e4eaf3] border-0 outline-none rounded-[4px] cursor-pointer login__checkbox"
         />
         <p className="text-sm leading-[1.71] font-light">
           Я согласен на обработку персональных данных
