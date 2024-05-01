@@ -1,4 +1,6 @@
 import "./App.css";
+import Slider from "./Components/Slider/Slider";
+// import Modal from "./Modals/Modal";
 // import { UserCarousel } from "./Slider/UserCarousel";
 import Modal from "./Modals/Modal";
 // import Agreement from "./Modals/Agreement";
@@ -14,11 +16,10 @@ function App() {
 
   return (
     <>
-      <div className="h-full w-full">
+      <div className="absolute h-full w-full z-50">
         <Modal
           active={active}
           setActive={setActive}
-          agreement
           height={"min"}
           pr={"5px"}
         >
@@ -31,6 +32,7 @@ function App() {
       </div>
 
       <Showcase />
+      <Slider />
     </>
   );
 }
