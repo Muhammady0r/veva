@@ -1,0 +1,361 @@
+.banner {
+  background: url("/src/assets/everest2.png") #e2e8f2;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+  .dot {
+    background: rgb(28, 187, 238);
+    border-radius: 50%;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+  }
+  .dot1 {
+    left: 360px;
+    top: 175px;
+  }
+  .dot2 {
+    right: 354.2px;
+    bottom: 165.1px;
+    background: rgb(103, 194, 199);
+  }
+  .multiDot {
+    position: absolute;
+  }
+  .multiDot1 {
+    right: 250px;
+    top: 100px;
+    transform: rotate(135deg);
+  }
+  .multiDot2 {
+    left: 250px;
+    bottom: 65px;
+  }
+  &__union {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    width: 50%;
+    transform: scale(1.03, 1);
+  }
+  .union2 {
+    right: 0;
+    left: auto;
+  }
+  &__btn {
+    border-radius: 1000px !important;
+    padding: 12px 38px 12px 38px !important;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);
+    bottom: 9%;
+    z-index: 5;
+  }
+  .swiper {
+    height: 60%;
+    top: 47%;
+    transform: translateY(-50%);
+    user-select: none;
+    .swiper-wrapper {
+      .swiper-slide {
+        opacity: 0.45;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scale: 0.7;
+        transition: all 0.4s !important;
+        img {
+          height: 95%;
+        }
+        button {
+          opacity: 0;
+          position: absolute;
+          right: 5%;
+          top: 17%;
+          box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+          background: rgb(255, 255, 255);
+          padding: 0 10px;
+          font-size: 25px;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #1cbbee;
+          transition: all 0.6s !important;
+        }
+      }
+      .swiper-slide-active {
+        opacity: 1;
+        scale: 1;
+        button {
+          opacity: 1;
+        }
+      }
+    }
+    .btns {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 55%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      button {
+        pointer-events: all;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        opacity: 0.5;
+        i {
+          transform: scale(1.5);
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .about-water {
+    display: block;
+    background: #1cbbee;
+    border-radius: 50%;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 32%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.2s;
+    h1 {
+      color: rgb(0, 0, 0);
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 42px;
+      letter-spacing: 0%;
+      width: 55%;
+    }
+    ul {
+      width: 55%;
+      list-style: none;
+      padding: 0;
+      li {
+        color: rgb(255, 255, 255) !important;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0%;
+        &:before {
+          float: left; /* Let the before pseudo element start from the leftmost position of each list item */
+          width: 0;
+          white-space: nowrap;
+          content: ".....................................................";
+          color: #fff;
+          // font-weight: bold;
+        }
+      }
+      span:first-child {
+        background: #1cbbee;
+        padding-right: 0.2em;
+      }
+      span + span {
+        float: right; /* Align the count to the rightmost position of the list */
+        background: #1cbbee;
+        padding-left: 0.2em;
+      }
+    }
+    button {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+      background: rgb(255, 255, 255);
+      padding: 0 10px;
+      font-size: 25px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1cbbee;
+      transition: all 0.6s !important;
+    }
+  }
+  .about-opened {
+    width: 425px;
+    height: 425px;
+    & ~ .swiper {
+      .swiper-wrapper {
+        .swiper-slide-active {
+          transform: translateX(-100px) !important;
+          button {
+            transform: rotateZ(45deg);
+          }
+        }
+      }
+    }
+  }
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #00000084;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+  }
+}
+
+@media (max-width: 1355px) {
+  .banner {
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          button {
+            top: 20%;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1255px) {
+  .banner {
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          img {
+            height: 80%;
+          }
+          button {
+            top: 21%;
+            right: -5px;
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .banner {
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          button {
+            top: 21%;
+            right: 40%;
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+    &__union {
+      width: 100%;
+    }
+    .union2 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .banner {
+    .swiper {
+      .btns {
+        width: 80%;
+
+        span {
+          display: none;
+        }
+      }
+      .swiper-wrapper {
+        .swiper-slide {
+          button {
+            top: 21%;
+            right: 35%;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .about-opened {
+      position: fixed;
+      width: 425px;
+      height: 425px;
+      z-index: 11;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.25);
+      overflow: visible;
+      & ~ .overlay {
+        opacity: 1;
+        // pointer-events: all;
+      }
+      button {
+        opacity: 1;
+        top: -5%;
+        transform: rotateZ(-45deg);
+      }
+      & ~ .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            img {
+              height: auto;
+              width: 30px !important;
+            }
+            button {
+              top: -40px;
+            }
+          }
+          .swiper-slide-active {
+            transform: translateX(-100px) !important;
+            button {
+              transform: rotateZ(45deg);
+            }
+          }
+        }
+      }
+    }
+    &__union {
+      transform: scale(2) translateY(-1px);
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .banner {
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          button {
+            right: 25%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,43 +1,38 @@
-import { useState } from "react";
-import logo from "/logo.png";
 import "./App.css";
 import Slider from "./Components/Slider/Slider";
 // import Modal from "./Modals/Modal";
+// import { UserCarousel } from "./Slider/UserCarousel";
+import Modal from "./Modals/Modal";
 // import Agreement from "./Modals/Agreement";
 // import SignUp from "./Modals/SignUp";
 // import LogIn from "./Modals/LogIn";
 // import Confirmation from "./Modals/Confirmation";
+import Order from "./Modals/Order";
+import Showcase from "./components/Showcase/Showcase";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  // const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
     <>
-      {/* <Modal active={active} setActive={setActive}> */}
-      {/* <LogIn active={active}  /> */}
-      {/* <Confirmation active={active}  /> */}
-      {/* <SignUp active={active} /> */}
-      {/* <Agreement /> */}
-      {/* </Modal> */}
+      <div className="absolute h-full w-full z-50">
+        <Modal
+          active={active}
+          setActive={setActive}
+          height={"min"}
+          pr={"5px"}
+        >
+          {/* <LogIn active={active} /> */}
+          <Order />
+          {/* <Confirmation active={active}  /> */}
+          {/* <SignUp active={active} /> */}
+          {/* <Agreement /> */}
+        </Modal>
+      </div>
+
+      <Showcase />
       <Slider />
-      {/* <div>
-        <a href="https://meedweff.vercel.app" target="_blank">
-          <img src={logo} className="logo" alt="logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the MeedWeff logo to go to website
-      </p> */}
     </>
   );
 }
