@@ -1,12 +1,15 @@
 import "./App.css";
-// import { UserCarousel } from "./Slider/UserCarousel";
+
+import { useState } from "react";
+
 import Modal from "./Modals/Modal";
+// import EditPersonalInfo from "./Modals/EditPersonalInfo";
+// import { UserCarousel } from "./Slider/UserCarousel";
 // import Agreement from "./Modals/Agreement";
 // import SignUp from "./Modals/SignUp";
 // import LogIn from "./Modals/LogIn";
 // import Confirmation from "./Modals/Confirmation";
-import Order from "./Modals/Order";
-import { useState } from "react";
+// import Order from "./Modals/Order";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -20,8 +23,9 @@ function App() {
         height={"min"}
         pr={"5px"}
       >
+        {/* <EditPersonalInfo /> */}
         {/* <LogIn active={active} /> */}
-        <Order />
+        {/* <Order /> */}
         {/* <Confirmation active={active}  /> */}
         {/* <SignUp active={active} /> */}
         {/* <Agreement /> */}
