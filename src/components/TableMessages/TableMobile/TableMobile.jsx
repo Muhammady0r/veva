@@ -229,7 +229,7 @@ const TableMobile = () => {
           </div>
         ))}
       </div>
-      <button className="more" onClick={addMore}>
+      <button className={`more ${vis == 24 ? "moreNone" : ""}`} onClick={addMore}>
         Еще открыть
       </button>
     </div>

@@ -343,11 +343,11 @@ const TableMobile = () => {
                 <p>{e.allCost}</p>
               </div>
             </div>
-            <div className="cancel">{e.cancel}</div>
+            <button className="cancel">{e.cancel}</button>
           </div>
         ))}
       </div>
-      <button className="more" onClick={addMore}>
+      <button className={`more ${vis == 24 ? "moreNone" : ""}`} onClick={addMore}>
         Еще открыть
       </button>
     </div>
