@@ -9,7 +9,7 @@ import "swiper/css/effect-coverflow";
 
 import { Button } from "@/components/ui/button";
 
-const Showcase = () => {
+const Showcase = ({ clickFn }) => {
   const [aboutOpened, setAOpened] = useState(false);
 
   return (
@@ -132,7 +132,7 @@ const Showcase = () => {
           <img src="/src/assets/culler1.png" alt="" />
         </SwiperSlide>
       </Swiper>
-      <Button variant="" className={"banner__btn"}>
+      <Button variant="" className={"banner__btn"} onClick={clickFn}>
         Заказать воду
       </Button>
     </div>
