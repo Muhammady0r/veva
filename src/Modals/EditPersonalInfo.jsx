@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { useState } from "react";
@@ -8,9 +9,39 @@ import TextInput from "./UIelements/TextInput";
 import styles from "./agreement.module.css";
 import Button from "./UIelements/Button";
 
-function EditPersonalInfo() {
+function EditPersonalInfo({ state, setState }) {
   const [count, setCount] = useState(1);
   const [amount, setAmount] = useState(1);
+  const [data, setData] = useState({
+    fullName: "",
+    phoneNumber1: "",
+    phoneNumber2: "",
+    address1: "",
+    address2: "",
+    district: "",
+    building: "",
+    entrance: "",
+    floor: "",
+    apartmentNum: "",
+    doorBellCode: "",
+  });
+
+  function handleSave() {
+    setState({
+      ...state,
+      fullName: data.fullName,
+      phoneNumber1: data.phoneNumber1,
+      phoneNumber2: data.phoneNumber2,
+      address1: data.address1,
+      address2: data.address2,
+      district: data.district,
+      building: data.building,
+      entrance: data.entrance,
+      floor: data.floor,
+      apartmentNum: data.apartmentNum,
+      doorBellCode: data.doorBellCode,
+    });
+  }
 
   const handleIncrease = () => {
     setCount(count < 3 ? count + 1 : count);
@@ -32,10 +63,20 @@ function EditPersonalInfo() {
       <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
         Редактировать
       </h4>
-      <TextInput placeholder={"Никифоров Михаил"} />
+      <TextInput
+        placeholder={"Никифоров Михаил"}
+        setData={setData}
+        data={data}
+        fullname
+      />
+
       {Array.from({ length: count }, (_, index) => (
         <div key={index} className="flex my-[15px]">
-          <PhoneInput />
+          <PhoneInput
+            data={data}
+            setData={setData}
+            phonenumber={`phonenumber_${index}`}
+          />
           {index + 1 === count ? (
             <button onClick={handleIncrease} className="ml-[15px]">
               <img src={plus} alt="" />
@@ -54,7 +95,13 @@ function EditPersonalInfo() {
           <div key={index}>
             <h5 className="text-lg font-bold">Ваш адрес №{index + 1}:</h5>
             <div className="my-[15px] flex">
-              <TextInput placeholder={"г. Ташкент, улица Мукими, 166 ..."} />
+              <TextInput
+                placeholder={"г. Ташкент, улица Мукими, 166 ..."}
+                address={`address_${index}`}
+                key={index}
+                data={data}
+                setData={setData}
+              />
               {index + 1 === amount ? (
                 <button onClick={handleAdd} className="ml-[15px]">
                   <img src={plus} alt="" width="20" height="20" />
@@ -101,7 +148,7 @@ function EditPersonalInfo() {
           Я согласен на обработку персональных данных
         </p>
       </div>
-      <Button>Сохранить</Button>
+      <Button onClick={handleSave}>Сохранить</Button>
     </div>
   );
 }

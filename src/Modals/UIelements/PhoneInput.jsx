@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "./phoneInput.module.css";
 
 // eslint-disable-next-line react/prop-types
-function PhoneInput() {
+function PhoneInput({ setData, data, phonenumber }) {
   const [phone, setPhone] = useState("");
   const [lastKeyword, setLastKeyword] = useState("");
 
@@ -30,6 +31,12 @@ function PhoneInput() {
         placeholder="00 000-00-00"
         onChange={(e) => {
           setPhone(e.target.value);
+          if (phonenumber == "phonenumber_0") {
+            setData({ ...data, phoneNumber1: e.target.value });
+          }
+          if (phonenumber == "phonenumber_1") {
+            setData({ ...data, phoneNumber2: e.target.value });
+          }
         }}
         onKeyDown={(e) => setLastKeyword(e.key)}
         value={phone}

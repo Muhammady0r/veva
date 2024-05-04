@@ -10,7 +10,8 @@ import Modal from "./Modals/Modal";
 // import LogIn from "./Modals/LogIn";
 // import Confirmation from "./Modals/Confirmation";
 // import Order from "./Modals/Order";
-import Showcase from "./components/Showcase/Showcase";
+// import Showcase from "./components/Showcase/Showcase";
+import PersonalInfo from "./components/PersonalInfo";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -31,9 +32,10 @@ function App() {
           {/* <Confirmation active={active}  /> */}
           {/* <SignUp active={active} /> */}
           {/* <Agreement /> */}
+          <PersonalInfo />
         </Modal>
       </div>
-      <Showcase />
+      {/* <Showcase /> */}
     </>
   );
 }
