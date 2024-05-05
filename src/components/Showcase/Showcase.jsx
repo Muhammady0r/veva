@@ -135,6 +135,14 @@ const Showcase = () => {
       <Button variant="" className={"banner__btn"}>
         Заказать воду
       </Button>
+      <div className="bottom-links">
+        <a href="#">
+          <img src="/src/assets/UserIcon.png" alt="" />
+        </a>
+        <a href="tg://resolve?domain=Meed0ff">
+          <img src="/src/assets/telegram.png" alt="" />
+        </a>
+      </div>
     </div>
   );
 };
