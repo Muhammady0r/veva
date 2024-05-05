@@ -9,6 +9,12 @@ import "swiper/css/effect-coverflow";
 
 import { Button } from "@/components/ui/button";
 
+import multiDotPNG from "/src/assets/multiDot.png";
+import unionPNG from "/src/assets/Union.png";
+import bottlePNG from "/src/assets/bottle.svg";
+import cullet2PNG from "/src/assets/culler2.svg";
+import cullet1PNG from "/src/assets/culler1.png";
+
 const Showcase = ({ clickFn }) => {
   const [aboutOpened, setAOpened] = useState(false);
 
@@ -16,18 +22,10 @@ const Showcase = ({ clickFn }) => {
     <div className="banner">
       <div className="dot dot1"></div>
       <div className="dot dot2"></div>
-      <img
-        src="src/assets/multiDot.png"
-        alt=""
-        className="multiDot multiDot1"
-      />
-      <img
-        src="src/assets/multiDot.png"
-        alt=""
-        className="multiDot multiDot2"
-      />
-      <img src="src/assets/Union.png" alt="" className="banner__union" />
-      <img src="src/assets/Union.png" alt="" className="banner__union union2" />
+      <img src={multiDotPNG} alt="" className="multiDot multiDot1" />
+      <img src={multiDotPNG} alt="" className="multiDot multiDot2" />
+      <img src={unionPNG} alt="" className="banner__union" />
+      <img src={unionPNG} alt="" className="banner__union union2" />
 
       <div className={`about-water ${aboutOpened ? "about-opened" : ""}`}>
         <button
@@ -100,7 +98,7 @@ const Showcase = ({ clickFn }) => {
           </button>
         </div>
         <SwiperSlide>
-          <img src="/src/assets/bottle.svg" alt="" />
+          <img src={bottlePNG} alt="" />
           <button
             onClick={() => {
               setAOpened(!aboutOpened);
@@ -110,13 +108,13 @@ const Showcase = ({ clickFn }) => {
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/src/assets/culler2.svg" alt="" className="scale-125" />
+          <img src={cullet2PNG} alt="" className="scale-125" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/src/assets/culler1.png" alt="" />
+          <img src={cullet1PNG} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/src/assets/bottle.svg" alt="" />
+          <img src={bottlePNG} alt="" />
           <button
             onClick={() => {
               setAOpened(!aboutOpened);
@@ -126,10 +124,10 @@ const Showcase = ({ clickFn }) => {
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/src/assets/culler2.svg" alt="" className="scale-125" />
+          <img src={cullet2PNG} alt="" className="scale-125" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/src/assets/culler1.png" alt="" />
+          <img src={cullet1PNG} alt="" />
         </SwiperSlide>
       </Swiper>
       <Button variant="" className={"banner__btn"} onClick={clickFn}>
