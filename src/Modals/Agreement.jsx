@@ -1,9 +1,9 @@
 import Button from "./UIelements/Button";
 import styles from "./agreement.module.css";
 
-function Agreement() {
+function Agreement({ className }) {
   return (
-    <>
+    <div className={className}>
       <h4 className="font-light text-[clamp(24px,2vw,32px)]">
         Ознакомьтесь с правилами
       </h4>
@@ -118,7 +118,7 @@ function Agreement() {
         </p>
       </div>
       <Button>Согласен с правилами</Button>
-    </>
+    </div>
   );
 }
 

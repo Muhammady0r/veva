@@ -6,7 +6,7 @@ import telegramBlue from "./telegram_blue.svg";
 import { Button } from "@/components/ui/button";
 import telegramIMG from "./telegram.svg";
 
-export const Footer = () => {
+export const Footer = ({ cerFunc }) => {
   return (
     <section className="footer py-2 pb-4">
       <Button className="bg-[#1CBBEE] text-white 2xl:hidden xl:hidden lg:hidden md:flex gap-4 h-auto drop-shadow-xl rounded-full px-12 w-full mb-10">
@@ -32,19 +32,19 @@ export const Footer = () => {
           <ul>
             <li>
               <a
-                href=""
+                href="#"
                 className="underline 2xl:text-base xl:text-base lg:text-sm"
               >
                 Договор оферты
               </a>
             </li>
             <li>
-              <a
-                href=""
+              <button
+                onClick={cerFunc}
                 className="underline 2xl:text-base xl:text-base lg:text-sm"
               >
                 Сертификаты
-              </a>
+              </button>
             </li>
           </ul>
         </div>

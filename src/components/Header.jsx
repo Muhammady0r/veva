@@ -70,7 +70,7 @@ const Header = () => {
             </a>
           </div>
           <div className="position border flex gap-3 cursor-pointer">
-            <i class="fa-solid fa-location-dot text-gray-600"></i>
+            <i className="fa-solid fa-location-dot text-gray-600"></i>
             <p>улица Мукими, 166</p>
           </div>
         </div>

@@ -9,6 +9,7 @@ function Modal({
   pr,
   opened,
   setOpened,
+  className,
 }) {
   return (
     <div
@@ -19,7 +20,7 @@ function Modal({
       <div
         className={`flex-col ${
           agreement ? `w-[682px] h-[${height}]` : `w-[464px]`
-        }`}
+        } ${className}`}
       >
         {agreement ? null : (
           <div className="flex justify-start">

@@ -19,6 +19,7 @@ import Header from "./components/Header";
 function App() {
   const [modal, setModal] = useState(false);
   const [active, setActive] = useState(false);
+  const [cer, setCer] = useState(false);
 
   return (
     <>
@@ -29,26 +30,34 @@ function App() {
         pr={"5px"}
         opened={modal}
         setOpened={setModal}
+        agreement={cer == true}
+        className={`${cer ? "scale-90" : ""}`}
       >
         {/* <EditPersonalInfo /> */}
-        <LogIn active={!active} />
+        <LogIn active={!active} className={`${cer ? "hidden" : ""}`} />
         {/* <Order /> */}
         {/* <Confirmation active={active}  /> */}
         {/* <SignUp active={active} /> */}
-        {/* <Agreement /> */}
+        <Agreement className={`${cer ? "" : "hidden"}`} />
       </Modal>
 
       <Header />
       <Showcase
         clickFn={() => {
           setModal(true);
+          setCer(false);
         }}
       />
       <Slider />
 
       <Quality />
       <div className="container">
-        <Footer />
+        <Footer
+          cerFunc={() => {
+            setModal(true);
+            setCer(true);
+          }}
+        />
       </div>
     </>
   );
