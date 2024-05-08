@@ -1,4 +1,5 @@
-.container {
+.slider {
+  user-select: none;
   .swiper {
     .swiper-pagination {
       top: 470px;
@@ -85,7 +86,7 @@
 }
 
 @media (max-width: 1000px) {
-  .container {
+  .slider {
     .swiper {
       .swiper-pagination {
         top: 140px;
@@ -98,8 +99,8 @@
         justify-content: center;
         align-items: center;
         .txt {
-            justify-content: center;
-            align-items: center;
+          justify-content: center;
+          align-items: center;
           p {
             font-size: 28px;
             line-height: normal;
@@ -120,11 +121,11 @@
 }
 
 @media (max-width: 400px) {
-  .container {
+  .slider {
     .swiper {
-        .swiper-pagination {
-            top: 125px;
-        }
+      .swiper-pagination {
+        top: 125px;
+      }
 
       .swiper-slide {
         .txt {

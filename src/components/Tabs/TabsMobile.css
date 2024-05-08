@@ -1,0 +1,81 @@
+.select {
+  border-radius: 10px;
+
+  background: rgb(242, 244, 247);
+  /* Frame 2536460 */
+  position: static;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 15px;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 24px 0px;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../../public/Table/Forward.png");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: 50%;
+    /* Frame 5 */
+    position: static;
+    width: 100%;
+    /* Автолейаут */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 14px 15px 14px 15px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+    /* H5/Text */
+    color: rgb(0, 0, 0);
+    font-family: RF Tone;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    span {
+      border-radius: 1000px;
+      background: rgb(233, 87, 63);
+      padding: 0px 4px;
+      color: rgb(255, 255, 255);
+      font-family: RF Tone;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+
+    option {
+      /* H5/Text */
+      color: rgb(0, 0, 0);
+      font-family: RF Tone;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .mob-tabs-select {
+    display: none;
+  }
+}

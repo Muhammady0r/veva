@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import { useEffect } from "react";
+
 // eslint-disable-next-line react/prop-types
 function Modal({
   children,
@@ -11,6 +14,14 @@ function Modal({
   setOpened,
   className,
 }) {
+  useEffect(() => {
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        setOpened(false);
+      }
+    });
+  }, []);
+
   return (
     <div
       className={`fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] flex justify-center items-center z-10 ${

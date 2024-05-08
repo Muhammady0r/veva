@@ -1,0 +1,103 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  .tab-component {
+    hr {
+      margin: 0;
+      border: 1px solid rgb(152, 162, 179);
+      position: relative;
+    }
+
+    .tablist {
+      margin-bottom: 2px;
+
+      button {
+        padding: 12px 24px;
+        /* H5/Text */
+        color: rgb(152, 162, 179);
+        font-family: RF Tone;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          border-radius: 1000px;
+          background: rgb(233, 87, 63);
+          padding: 0px 4px;
+          color: rgb(255, 255, 255);
+          font-family: RF Tone;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0%;
+          text-align: center;
+        }
+      }
+
+      button[data-state="active"] {
+        border-radius: 10px 10px 0px 0px;
+        background: rgb(242, 244, 247);
+        box-shadow: none;
+        /* H5/Text */
+        color: rgb(0, 0, 0);
+        font-family: RF Tone;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .tabs {
+    .tab-component {
+      .tablist {
+        button {
+          padding: 12px 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .tabs {
+    .tab-component {
+      .tablist {
+        button {
+          padding: 10px 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .tabs {
+    .tab-component {
+      .tablist {
+        button {
+          padding: 10px 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .tabs {
+    display: none;
+  }
+}

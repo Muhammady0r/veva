@@ -1,0 +1,200 @@
+.mob-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  gap: 24px;
+
+  .more {
+    /* H4/Text */
+    color: rgb(0, 0, 0);
+    font-family: RF Tone;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    border-radius: 1000px;
+
+    background: rgb(242, 244, 247);
+    /* Frame 2535415 */
+    position: static;
+    width: 100%;
+    height: 52px;
+    /* Автолейаут */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 38px 12px 38px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin: 15px 0px;
+  }
+
+  h1 {
+    /* H3/Text */
+    color: rgb(0, 0, 0);
+    font-family: RF Tone;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-align: right;
+  }
+
+  input {
+    /* H5/Text */
+    color: rgb(0, 0, 0);
+    font-family: RF Tone;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    border-radius: 10px;
+    /* search */
+    position: relative;
+    width: 100%;
+    height: 42px;
+    /* Автолейаут */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 10px 2px 40px;
+
+    background: rgb(242, 244, 247);
+  }
+
+  input#search {
+    background-image: url(../../../public/Table/Vector.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+
+    .card {
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(242, 244, 247);
+      border-left: 1px solid rgb(242, 244, 247);
+      border-right: 1px solid rgb(242, 244, 247);
+      border-radius: 0px 0px 10px 10px;
+      background: rgb(255, 255, 255);
+      width: 100%;
+      /* H5/Text */
+      color: rgb(0, 0, 0);
+      font-family: RF Tone;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 24px;
+      letter-spacing: 0%;
+      text-align: left;
+
+      span {
+        /* H5/Text */
+        color: rgb(0, 0, 0);
+        font-family: RF Tone;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+
+      .top {
+        border-radius: 10px 10px 0px 0px;
+        padding: 20px 20px 10px 20px;
+        background: rgb(242, 244, 247);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .dates {
+          display: flex;
+          justify-content: space-between;
+
+          .new {
+            /* H5/Text */
+            color: rgb(0, 0, 0);
+            font-family: RF Tone;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 0%;
+            text-align: left;
+            border-radius: 6px;
+
+            background: rgb(98, 187, 0);
+            /* Frame 2535432 */
+            position: static;
+            width: 100px;
+            height: 24px;
+            /* Автолейаут */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 10px 0px 10px;
+
+            /* Inside Auto Layout */
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            margin: 0px 10px;
+          }
+        }
+      }
+
+      .center {
+        padding: 15px 0px 10px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 20px;
+
+        .col {
+          display: flex;
+          gap: 28px;
+        }
+
+        .allCost {
+          p {
+            /* H5/Text */
+            color: rgb(28, 187, 238);
+            font-family: RF Tone;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0%;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .прочитано {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .mob-table {
+    display: none;
+  }
+}
+
+.moreNone {
+  display: none !important;
+}

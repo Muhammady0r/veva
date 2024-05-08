@@ -1,5 +1,5 @@
-import checked from "../assets/checked.svg";
-function Order() {
+import checked from "/src/assets/imgs/checked.svg";
+function Order({ count, time, pay }) {
   return (
     <div>
       <div className="text-center">
@@ -22,7 +22,7 @@ function Order() {
             Кол-во:
           </span>
           <span className="font-bold text-[clamp(14px,3.4vw,18px)]">
-            3 штуки
+            {count} штук(и)
           </span>
         </li>
         <li className="py-[11.5px] px-[20px] bg-[#f2f4f7]">
@@ -30,7 +30,7 @@ function Order() {
             Время доставки:
           </span>
           <span className="font-bold text-[clamp(14px,3.4vw,18px)]">
-            к вечеру 16:00-20:00
+            {!time ? "Днем с 10:00-15:00" : "К вечеру 16:00-20:00"}
           </span>
         </li>
         <li className="py-[11.5px] px-[20px]">
@@ -38,7 +38,7 @@ function Order() {
             Форма оплаты:
           </span>
           <span className="font-bold text-[clamp(14px,3.4vw,18px)]">
-            Наличными
+            {pay == 1 ? "Наличными" : "Карта"}
           </span>
         </li>
       </ul>

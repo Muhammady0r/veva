@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "/src/assets/components/logo.svg";
+import img1 from "/src/assets/imgs/logo.svg";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Select,
@@ -17,84 +17,83 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import "./Header.css";
+import { Link, NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ className }) => {
   return (
     <>
-      <header className="flex gap-5 w-full items-center justify-around border-1 p-10">
+      <header
+        className={`flex w-full items-center justify-between border-1 p-10 px-16 pr-36 ${className}`}
+      >
         <div className="flex items-center gap-3">
           <Sheet>
             <SheetTrigger>
               <i className="fa-solid fa-bars"></i>
             </SheetTrigger>
             <SheetContent>
-              <SheetHeader>
-                <SheetDescription>
-                  <div className="soazla">
-                    <a className=" hvr" href="">
-                      Главная
-                    </a>
-                    <a className=" hvr" href="">
-                      Магазин товаров
-                    </a>
-                    <a className=" hvr" href="">
-                      Договор оферты
-                    </a>
-                    <a className=" hvr" href="">
-                      Сертификаты
-                    </a>
-                  </div>
-                  <div className="tel">
-                    <p>Телефон:</p>
-                    <a href="tel:+998 55 519 90 90">+998 55 519 90 90</a>
-                  </div>
-                  <div className="fain">
-                    <i className="fain1 fa-brands fa-facebook-f fa-2xl"></i>
-                    <i className="fain2 fa-brands fa-instagram fa-2xl"></i>
-                  </div>
-                </SheetDescription>
-              </SheetHeader>
+              <div className="soazla">
+                <NavLink className=" hvr" to="/">
+                  Главная
+                </NavLink>
+                <NavLink className=" hvr" to="/catalog">
+                  Магазин товаров
+                </NavLink>
+                <NavLink className=" hvr" to="">
+                  Договор оферты
+                </NavLink>
+                <NavLink className=" hvr" to="">
+                  Сертификаты
+                </NavLink>
+              </div>
+              <div className="tel">
+                <p>Телефон:</p>
+                <NavLink to="tel:+998 55 519 90 90">+998 55 519 90 90</NavLink>
+              </div>
+              <div className="fain">
+                <i className="fain1 fa-brands fa-facebook-f fa-2xl"></i>
+                <i className="fain2 fa-brands fa-instagram fa-2xl"></i>
+              </div>
             </SheetContent>
           </Sheet>
-          <div className="img flex items-center gap-3">
+          <Link to={"/"} className="img flex items-center gap-3">
             <img src={img1} alt="" />
-          </div>
+          </Link>
         </div>
         <div className="flex gap-5 items-center links">
           <div className="links flex gap-5 items-center ">
-            <a className="link hvr" href="/">
+            <NavLink className="link hvr" to="/">
               Главная
-            </a>
-            <a className="link hvr" href="">
+            </NavLink>
+            <NavLink className="link hvr" to="/catalog">
               Магазин товаров
-            </a>
+            </NavLink>
           </div>
           <div className="position border flex gap-3 cursor-pointer">
             <i className="fa-solid fa-location-dot text-gray-600"></i>
             <p>улица Мукими, 166</p>
           </div>
         </div>
-        <div className="flex gap-2 items-center borderr-1">
-          <Select>
+        <div className="flex gap-2 items-center border-1 rounded-full overflow-hidden">
+          <Select defaultValue="ru">
             <SelectTrigger className="">
               <SelectValue placeholder="Lng" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">RU</SelectItem>
-              <SelectItem value="dark">ENG</SelectItem>
+              <SelectItem value="ru">RU</SelectItem>
+              <SelectItem value="en">EN</SelectItem>
             </SelectContent>
           </Select>
 
-          <button
-            type="button"
+          <Link
+            to="/profile"
             className="acc items-center flex gap-5 border border-1r"
           >
-            <Avatar>
+            <Avatar className={"scale-90"}>
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <p className="voyti">Войти в кабинет</p>
-          </button>
+            <p className="voyti scale-90">Войти в кабинет</p>
+          </Link>
         </div>
       </header>
     </>

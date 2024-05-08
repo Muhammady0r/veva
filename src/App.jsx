@@ -1,28 +1,29 @@
 import "./App.css";
-import { Quality } from "./assets/components/Quality";
-import { Footer } from "./assets/components/Footer";
+import { Footer } from "./components/Footer";
 
 import { useState } from "react";
 
 import Modal from "./Modals/Modal";
-// import EditPersonalInfo from "./Modals/EditPersonalInfo";
-// import { UserCarousel } from "./Slider/UserCarousel";
 import Agreement from "./Modals/Agreement";
-import SignUp from "./Modals/SignUp";
-import LogIn from "./Modals/LogIn";
-// import Confirmation from "./Modals/Confirmation";
-import Order from "./Modals/Order";
-import Showcase from "./components/Showcase/Showcase";
-import Slider from "./components/Slider/Slider";
 import Header from "./components/Header";
+import { Route, Routes, useLocation } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import ProfilePage from "./components/ProfilePage";
+import Union from "./components/Union";
+import CatalogPage from "./components/CatalogPage";
 
 function App() {
   const [modal, setModal] = useState(false);
   const [active, setActive] = useState(false);
-  const [cer, setCer] = useState(false);
+  const loc = useLocation();
 
   return (
     <>
+      <Header
+        className={`${
+          loc.pathname == "/" ? "bg-transparent absolute" : "bg-[#dee3ef]"
+        }`}
+      />
       <Modal
         active={active}
         setActive={setActive}
@@ -30,32 +31,23 @@ function App() {
         pr={"5px"}
         opened={modal}
         setOpened={setModal}
-        agreement={cer == true}
-        className={`${cer ? "scale-90" : ""}`}
+        agreement
+        className={"scale-90"}
       >
-        {/* <EditPersonalInfo /> */}
-        <LogIn active={!active} className={`${cer ? "hidden" : ""}`} />
-        {/* <Order /> */}
-        {/* <Confirmation active={active}  /> */}
-        {/* <SignUp active={active} /> */}
-        <Agreement className={`${cer ? "" : "hidden"}`} />
+        <Agreement />
       </Modal>
+      <Union className={`${loc.pathname == "/" ? "hidden" : ""}`} />
 
-      <Header />
-      <Showcase
-        clickFn={() => {
-          setModal(true);
-          setCer(false);
-        }}
-      />
-      <Slider />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+      </Routes>
 
-      <Quality />
       <div className="container">
         <Footer
           cerFunc={() => {
             setModal(true);
-            setCer(true);
           }}
         />
       </div>

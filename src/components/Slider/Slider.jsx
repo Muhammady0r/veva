@@ -5,13 +5,13 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import car_img from "../../../public/Slider/m001t0331_a_home_delivery_illustration_27sep22 1.svg";
+import car_img from "/src/assets/imgs/m001t0331_a_home_delivery_illustration_27sep22 1.svg";
 
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
-function App() {
+function Slider({ className }) {
   return (
-    <div className="container">
+    <div className={`slider ${className}`}>
       <Swiper
         modules={[EffectCoverflow, Pagination, Navigation]}
         effect={"coverflow"}
@@ -84,4 +84,4 @@ function App() {
   );
 }
 
-export default App;
+export default Slider;

@@ -1,13 +1,12 @@
 @charset "UTF-8";
+header {
+  top: 0;
+  z-index: 1;
+}
 header .img {
   max-width: 145.43px;
   max-height: 62px;
   cursor: pointer;
-}
-header header {
-  max-width: 1280px;
-  font-weight: 600;
-  margin: 0 auto;
 }
 header .borderr-1 {
   border-radius: 100px 0px 0px 100px;
@@ -47,12 +46,12 @@ header .acc {
   flex: none;
   order: 1;
   flex-grow: 0;
-  margin: 0px 4px;
 }
 header .hvr {
   color: rgb(152, 162, 179);
 }
-header .hvr:hover {
+header .hvr:hover,
+header .active {
   color: black;
   text-decoration: underline !important;
   transition: 0.6s;
@@ -139,8 +138,9 @@ header .fain1 {
   border-radius: 50%;
   cursor: pointer;
 }
-header header button {
-  display: none;
+header button {
+  outline: none !important;
+  border: none !important;
 }
 
 @media (max-width: 2000px) {

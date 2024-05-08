@@ -1,0 +1,274 @@
+.myCart {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  gap: 100px;
+  margin-top: 50px;
+  .cart {
+    h2 {
+      color: rgb(0, 0, 0);
+      font-family: RF Tone;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 42px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    .card {
+      margin-top: 30px;
+      border-radius: 20px;
+      padding: 10px 45px;
+      display: flex;
+      gap: 48px;
+      margin-bottom: 5px;
+
+      background: rgb(242, 244, 247);
+      & > div {
+        padding: 15px;
+        h3 {
+          /* H3/Text */
+          font-size: 24px;
+          font-weight: 300;
+          line-height: 34px;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+        & > div {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          .count {
+            padding: 14px;
+            border-radius: 10px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+            p {
+              font-size: 18px;
+              font-weight: 300;
+              line-height: 28px;
+              letter-spacing: 0%;
+              text-align: center;
+            }
+            button {
+              color: #325ecd;
+            }
+          }
+          .price,
+          .full-price {
+            p {
+              color: rgb(152, 162, 179);
+              font-size: 14px;
+              font-weight: 300;
+            }
+            h4 {
+              font-size: 18px;
+              font-weight: 300;
+            }
+          }
+          .full-price {
+            h4 {
+              font-weight: 700;
+              color: #1cbbee;
+            }
+          }
+        }
+      }
+    }
+    .btns {
+      display: grid;
+      gap: 15px;
+      margin-top: 15px;
+
+      &:nth-child(3) {
+        grid-template-columns: 6fr 2fr 4fr;
+      }
+      &:nth-child(4) {
+        grid-template-columns: 4fr 4fr 4fr;
+
+        padding-bottom: 7.5px;
+        border-bottom: 2px dotted #98a2b3;
+      }
+      p {
+        color: rgb(152, 162, 179);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        padding-bottom: 5px;
+      }
+      span,
+      input {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+      }
+      .time {
+        user-select: none;
+        & > div {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            button {
+              scale: 1.3;
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+      & > div {
+        & > button {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 28px;
+        }
+      }
+    }
+    .total-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      & > div {
+        p {
+          color: rgb(152, 162, 179);
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 28px;
+        }
+        h1 {
+          color: rgb(28, 187, 238);
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 42px;
+        }
+      }
+      button {
+        border-radius: 1000px;
+
+        box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+
+        padding: 24px 38px;
+      }
+    }
+  }
+  .swiper_container {
+    width: 436px;
+    height: 240px;
+    margin: 0;
+    padding: 0 !important;
+    .swiper-slide {
+      padding: 30px !important;
+      .txt {
+        .title {
+          color: rgb(255, 255, 255);
+          font-size: 24px !important;
+          // font-weight: 700 !important;
+          line-height: 34px !important;
+          letter-spacing: 0% !important;
+          text-align: left;
+        }
+        button {
+          width: 175px !important;
+          height: 48px !important;
+
+          font-size: 14px !important;
+          font-weight: 300 !important;
+          line-height: 24px !important;
+          letter-spacing: 0%;
+        }
+      }
+      .img {
+        right: -25px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1188px) {
+  .myCart {
+    display: flex;
+    gap: 0;
+    .swiper_container {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .myCart {
+    .cart {
+      width: 100%;
+      .card {
+        gap: 20px;
+        padding: 15px;
+        & > div {
+          h3 {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+          }
+        }
+        .price {
+          display: none;
+        }
+      }
+      .btns {
+        display: flex;
+        flex-direction: column;
+        br {
+          display: none;
+        }
+        .time {
+          & > div {
+            align-items: start;
+            gap: 15px;
+            flex-direction: column;
+          }
+        }
+      }
+      .total-price {
+        text-align: center;
+        flex-direction: column;
+        gap: 10px;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .myCart {
+    .cart {
+      .card {
+        & > div {
+          & > div {
+            justify-content: start;
+            align-items: start;
+            gap: 10px;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

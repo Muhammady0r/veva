@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./UIelements/Button";
 import PhoneInput from "./UIelements/PhoneInput";
 import TextInput from "./UIelements/TextInput";
+import { useState } from "react";
+import Confirmation from "./Confirmation";
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function LogIn({ active, className }) {
+  const nav = useNavigate();
+  const [sms, setSMS] = useState(false);
+
   return active ? (
     <div className={className}>
       <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
@@ -24,7 +30,13 @@ function LogIn({ active, className }) {
         </p>
       </div>
 
-      <Button>Войти в кабинет</Button>
+      <Button
+        onClick={() => {
+          nav("/profile");
+        }}
+      >
+        Войти в кабинет
+      </Button>
 
       <p className="block text-center w-full text-[18px] font-light text-[#98a2b3] underline-offset-[5px] decoration-1 underline my-5">
         <a href="#\">Забыли пароль? Восстановить.</a>
@@ -36,19 +48,29 @@ function LogIn({ active, className }) {
       </p>
     </div>
   ) : (
-    <div className={className}>
-      <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
-        Вход в личный кабинет
-      </h4>
-      <div className="mt-6 mb-[30px]">
-        <PhoneInput />
-      </div>
+    <>
+      <Confirmation className={`${sms ? "" : "hidden"}`} />
+      <div className={className + ` ${sms ? "hidden" : ""}`}>
+        <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
+          Вход в личный кабинет
+        </h4>
+        <div className="mt-6 mb-[30px]">
+          <PhoneInput />
+        </div>
 
-      <Button>Получить СМС</Button>
-      <p className="block text-center w-full text-[18px] font-light text-[#98a2b3] underline-offset-[5px] decoration-1 underline mt-5">
-        <a href="#\">Зарегистрироваться</a>
-      </p>
-    </div>
+        <Button
+          onClick={() => {
+            console.log("asdasd");
+            setSMS(true);
+          }}
+        >
+          Получить СМС
+        </Button>
+        <p className="block text-center w-full text-[18px] font-light text-[#98a2b3] underline-offset-[5px] decoration-1 underline mt-5">
+          <a href="#\">Зарегистрироваться</a>
+        </p>
+      </div>
+    </>
   );
 }
 

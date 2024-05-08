@@ -1,5 +1,5 @@
 .banner {
-  background: url("/src/assets/everest2.png") #e2e8f2;
+  background: url("/src/assets/imgs/everest2.png") #e2e8f2;
   background-blend-mode: multiply;
   background-position: center;
   background-size: cover;
@@ -7,7 +7,7 @@
   height: 100svh;
   position: relative;
   overflow: hidden;
-  margin-bottom: 60px;
+  padding-top: 50px;
   .dot {
     background: rgb(28, 187, 238);
     border-radius: 50%;
@@ -26,27 +26,16 @@
   }
   .multiDot {
     position: absolute;
+    z-index: 6;
   }
   .multiDot1 {
     right: 250px;
-    top: 100px;
+    top: 110px;
     transform: rotate(135deg);
   }
   .multiDot2 {
     left: 250px;
     bottom: 65px;
-  }
-  &__union {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    object-fit: cover;
-    width: 50%;
-    transform: scale(1.03, 1);
-  }
-  .union2 {
-    right: 0;
-    left: auto;
   }
   &__btn {
     border-radius: 1000px !important;
@@ -56,13 +45,15 @@
     left: 50%;
     transform: translateX(-50%) scale(1.1);
     bottom: 9%;
-    z-index: 5;
+    z-index: 6;
   }
   .swiper {
     height: 60%;
     top: 47%;
     transform: translateY(-50%);
     user-select: none;
+    position: relative;
+    z-index: 3;
     .swiper-wrapper {
       .swiper-slide {
         opacity: 0.45;
@@ -72,12 +63,13 @@
         scale: 0.7;
         transition: all 0.4s !important;
         img {
+          transition: all 0.4s !important;
           height: 95%;
         }
         button {
           opacity: 0;
           position: absolute;
-          right: 5%;
+          right: 15%;
           top: 17%;
           box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
           background: rgb(255, 255, 255);
@@ -135,8 +127,9 @@
     position: absolute;
     width: 0;
     height: 0;
-    top: 32%;
+    top: 300px;
     left: 61%;
+    z-index: 2;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -202,10 +195,11 @@
   .about-opened {
     width: 425px;
     height: 425px;
+    left: 59%;
     & ~ .swiper {
       .swiper-wrapper {
         .swiper-slide-active {
-          transform: translateX(-100px) !important;
+          transform: translateX(-125px) rotateY(15deg) !important;
           button {
             transform: rotateZ(45deg);
           }
@@ -274,12 +268,6 @@
         }
       }
     }
-    &__union {
-      width: 100%;
-    }
-    .union2 {
-      display: none;
-    }
   }
 }
 
@@ -340,9 +328,6 @@
           }
         }
       }
-    }
-    &__union {
-      transform: scale(2) translateY(-1px);
     }
   }
 }
