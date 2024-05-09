@@ -32,9 +32,13 @@ function App() {
         opened={modal}
         setOpened={setModal}
         agreement
-        className={"scale-90"}
+        className={""}
       >
-        <Agreement />
+        <Agreement
+          closeFn={() => {
+            setModal(false);
+          }}
+        />
       </Modal>
       <Union className={`${loc.pathname == "/" ? "hidden" : ""}`} />
 

@@ -5,6 +5,7 @@
           user-select: none;
   border: 1px solid transparent;
   position: relative;
+  width: 100%;
 }
 .card-item,
 .card-item * {
@@ -26,36 +27,9 @@
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-radius: 0 0 8px 8px;
-}
-.card-item ul {
-  width: 100%;
-  list-style: none;
-  padding: 0;
-}
-.card-item ul li {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 24px;
-  letter-spacing: 0%;
-}
-.card-item ul li:before {
-  float: left; /* Let the before pseudo element start from the leftmost position of each list item */
-  width: 0;
-  white-space: nowrap;
-  content: "............................................................................";
-  color: #000;
-}
-.card-item ul span:first-child {
-  background: #fff;
-  padding-right: 0.2em;
-}
-.card-item ul span:last-child {
-  font-weight: 700;
-}
-.card-item ul span + span {
-  float: right; /* Align the count to the rightmost position of the list */
-  background: #fff;
-  padding-left: 0.2em;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 .card-item:hover {
   border-top: 1px solid black;
@@ -76,9 +50,58 @@
   opacity: 1;
 }
 
+.card-dropdown ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+}
+.card-dropdown ul li {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+.card-dropdown ul li:before {
+  float: left; /* Let the before pseudo element start from the leftmost position of each list item */
+  width: 0;
+  white-space: nowrap;
+  content: ".......................................................................................................................................................................................";
+  color: #000;
+}
+.card-dropdown ul span:first-child {
+  background: #fff;
+  padding-right: 0.2em;
+}
+.card-dropdown ul span:last-child {
+  font-weight: 700;
+}
+.card-dropdown ul span + span {
+  float: right; /* Align the count to the rightmost position of the list */
+  background: #fff;
+  padding-left: 0.2em;
+}
+
 .culler-card:hover ul {
   margin-bottom: 10px;
 }
 .culler-card:hover .card-footer {
   bottom: -280px;
+}
+
+@media (max-width: 665px) {
+  .card-item {
+    border: none !important;
+    transform: translate(0) !important;
+    cursor: pointer;
+  }
+  .card-item .card-footer {
+    display: none !important;
+  }
+  .culler-card ul {
+    transform: scale(0.9);
+  }
+  .culler-card ul li {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=Card.css.map */

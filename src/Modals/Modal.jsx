@@ -24,14 +24,20 @@ function Modal({
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] flex justify-center items-center z-10 ${
-        opened ? "" : "hidden"
-      }`}
+      className={`fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] transition-all flex justify-center items-center z-10 ${
+        opened ? "" : "pointer-events-none opacity-0"
+      } max-[665px]:items-end`}
     >
       <div
-        className={`flex-col ${
+        className="absolute w-full h-full top-0 left-0"
+        onClick={() => {
+          setOpened(false);
+        }}
+      ></div>
+      <div
+        className={`flex-col transition-all ${
           agreement ? `w-[682px] h-[${height}]` : `w-[464px]`
-        } ${className}`}
+        } ${className} ${opened ? "" : "translate-y-10 min-[665px]:scale-90"}`}
       >
         {agreement ? null : (
           <div className="flex justify-start">
@@ -63,7 +69,7 @@ function Modal({
             agreement
               ? `rounded-ss-[20px]  h-[${height}] pr-[${pr}]}`
               : `rounded - ss - none`
-          } rounded-e-[20px] rounded-bl-[20px]`}
+          } rounded-e-[20px] rounded-bl-[20px] max-h-[95vh]`}
         >
           <svg
             width="21"
@@ -71,7 +77,7 @@ function Modal({
             viewBox="0 0 21 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="hover:cursor-pointer absolute top-[12px] right-[13px]"
+            className="hover:cursor-pointer absolute top-[12px] right-[13px] max-[665px]:hidden"
             onClick={() => {
               setOpened(false);
             }}

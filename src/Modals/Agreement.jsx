@@ -1,14 +1,14 @@
 import Button from "./UIelements/Button";
 import styles from "./agreement.module.css";
 
-function Agreement({ className }) {
+function Agreement({ closeFn, className }) {
   return (
     <div className={className}>
       <h4 className="font-light text-[clamp(24px,2vw,32px)]">
         Ознакомьтесь с правилами
       </h4>
       <div
-        className={`text-sm font-light text-start my-[30px] h-[508px] overflow-auto ${styles.scrollbar}`}
+        className={`text-sm font-light text-start my-[30px] h-[500px] overflow-auto ${styles.scrollbar}`}
       >
         <p className="mb-[37px]">
           Настоящие Правила разработаны в соответствии с Законом Российской
@@ -117,7 +117,7 @@ function Agreement({ className }) {
           обеспечении единства измерений.
         </p>
       </div>
-      <Button>Согласен с правилами</Button>
+      <Button onClick={closeFn}>Согласен с правилами</Button>
     </div>
   );
 }
