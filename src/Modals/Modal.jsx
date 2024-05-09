@@ -51,9 +51,7 @@ function Modal({
           agreement
             ? `w-[682px] h-[${height}] max-[665px]:w-full`
             : `w-[464px] max-[665px]:w-full`
-        } ${className} ${
-          opened ? "" : "translate-y-10 min-[665px]:scale-90 blur-xl"
-        }`}
+        } ${className} ${opened ? "" : "translate-y-10 min-[665px]:scale-90"}`}
       >
         {!agreement && (
           <div className="flex justify-start">
