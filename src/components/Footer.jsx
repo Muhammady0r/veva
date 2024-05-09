@@ -10,12 +10,17 @@ import { Link } from "react-router-dom";
 export const Footer = ({ cerFunc }) => {
   return (
     <section className="footer py-2 pb-4">
-      <Button className="bg-[#1CBBEE] text-white 2xl:hidden xl:hidden lg:hidden md:flex gap-4 h-auto drop-shadow-xl rounded-full px-12 w-full mb-10">
-        <img src={telegramIMG} alt="" />
-        <div>
-          <h6 className="text-sm">Заказать через</h6>
-          <h5 className="font-bold">телеграмм бота</h5>
-        </div>
+      <Button className="bg-[#1CBBEE] text-white lg:hidden h-auto drop-shadow-xl rounded-full px-12 w-full mb-10">
+        <Link
+          to={"tg://resolve?domain=Meed0ff"}
+          className="flex gap-4 w-full h-full justify-center items-center"
+        >
+          <img src={telegramIMG} alt="" />
+          <div>
+            <h6 className="text-sm">Заказать через</h6>
+            <h5 className="font-bold">телеграмм бота</h5>
+          </div>
+        </Link>
       </Button>
       <div className="container grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-1 border-t-2 2xl:pt-8 xl:pt-8 lg:pt-6 md:pt-6 sm:pt-6 2xl:gap-12 xl:gap-12 lg:gap-8 md:gap-8 md:grid-cols-2 sm:grid-cols-2">
         <div className="footer__left flex items-center 2xl:justify-between xl:justify-between lg:justify-center     2xl:gap-0 xl:gap-0 lg:gap-24 md:gap-3 md:justify-between 2xl:flex-row xl:flex-row lg:flex-row md:flex-col-reverse md:items-start sm:flex-col-reverse sm:items-start sm:gap-3 sm:justify-between">

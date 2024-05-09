@@ -75,7 +75,7 @@ function App() {
           }}
         />
       </Modal>
-      <Union className={`${loc.pathname == "/" ? "hidden" : "mt-10"}`} />
+      <Union className={`${loc.pathname == "/" ? "hidden" : ""}`} />
 
       <Routes>
         <Route path="/" element={<HomePage setLogin={setLogin} />} />

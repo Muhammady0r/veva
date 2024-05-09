@@ -81,7 +81,7 @@ const Header = ({ profileFn, openCer, className }) => {
             <SheetTrigger className="min-[700px]:hidden">
               <i className="fa-solid fa-bars fa-xl"></i>
             </SheetTrigger>
-            <SheetContent side={"left"}>
+            <SheetContent side={"left"} className={"menuSheet"}>
               <SheetHeader>
                 <SheetTitle></SheetTitle>
                 <SheetDescription></SheetDescription>

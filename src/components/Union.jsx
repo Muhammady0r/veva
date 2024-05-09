@@ -8,10 +8,10 @@ const Union = ({ className }) => {
 
   return (
     <div
-      className={`relative z-[2] grid grid-cols-2 w-full -translate-y-5 max-[1144px]:-translate-y-4 max-[920px]:-translate-y-3 max-md:-translate-y-4 max-md:grid-cols-1 max-[460px]:-translate-y-3 ${className} ${
+      className={`relative z-[2] grid grid-cols-2 w-full -translate-y-5 max-[1144px]:-translate-y-4 max-[920px]:-translate-y-3 max-md:-translate-y-4 max-[460px]:-translate-y-3 max-md:grid-cols-1 ${className} ${
         loc.pathname == "/"
           ? "bg-transparent"
-          : "bg-[#dee3ef] pt-36 max-[940px]:pt-48 mt-0"
+          : "bg-[#dee3ef] pt-32 max-[940px]:pt-48 mt-0"
       }`}
     >
       <img
