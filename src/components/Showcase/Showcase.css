@@ -197,6 +197,9 @@
   height: 425px;
   left: 59%;
 }
+.banner .about-opened ~ .overlay {
+  pointer-events: all;
+}
 .banner .about-opened ~ .swiper .swiper-wrapper .swiper-slide-active {
   transform: translateX(-125px) rotateY(15deg) !important;
 }
@@ -206,7 +209,7 @@
 .banner .overlay {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 120%;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5176470588);

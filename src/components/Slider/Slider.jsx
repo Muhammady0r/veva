@@ -7,22 +7,28 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import car_img from "/src/assets/imgs/m001t0331_a_home_delivery_illustration_27sep22 1.svg";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Autoplay,
+} from "swiper/modules";
 
 function Slider({ className }) {
   return (
     <div className={`slider ${className}`}>
       <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation]}
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={false}
         loop={true}
+        autoplay
         slidesPerView={"1"}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 100,
+          depth: 200,
           modifier: 2.5,
           // slideShadows: false,
         }}

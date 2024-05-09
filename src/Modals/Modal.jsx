@@ -39,8 +39,8 @@ function Modal({
   return (
     <div
       className={`fixed z-[51] top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.25)] transition-all flex justify-center items-center ${
-        opened ? "" : "pointer-events-none opacity-0"
-      } max-[665px]:items-end`}
+        opened ? "" : "pointer-events-none opacity-0 max-[665px]:bg-transparent"
+      } max-[665px]:items-end max-[665px]:opacity-100`}
     >
       <div
         className="absolute w-full h-full top-0 left-0"
@@ -51,7 +51,11 @@ function Modal({
           agreement
             ? `w-[682px] h-[${height}] max-[665px]:w-full`
             : `w-[464px] max-[665px]:w-full`
-        } ${className} ${opened ? "" : "translate-y-10 min-[665px]:scale-90"}`}
+        } ${className} ${
+          opened
+            ? ""
+            : "translate-y-10 max-[665px]:translate-y-[120%] min-[665px]:scale-90"
+        }`}
       >
         {!agreement && (
           <div className="flex justify-start">

@@ -196,6 +196,9 @@
     width: 425px;
     height: 425px;
     left: 59%;
+    & ~ .overlay {
+      pointer-events: all;
+    }
     & ~ .swiper {
       .swiper-wrapper {
         .swiper-slide-active {
@@ -210,7 +213,7 @@
   .overlay {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 120%;
     top: 0;
     left: 0;
     background: #00000084;
