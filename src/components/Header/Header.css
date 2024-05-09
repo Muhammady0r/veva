@@ -1,0 +1,31 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.header header {
+  padding-top: 30px;
+}
+.header header .mid .links a {
+  color: rgb(152, 162, 179);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+}
+.header header .mid .links .active {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+  text-decoration-line: underline !important;
+}
+.header header .end .lng {
+  --tw-ring-color: transparent !important;
+  --tw-ring-offset-width: 0 !important;
+}
+
+.nav-links .active {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+  text-decoration-line: underline !important;
+}/*# sourceMappingURL=Header.css.map */

@@ -219,6 +219,31 @@
     pointer-events: none;
     transition: all 0.2s;
   }
+  .bottom-links {
+    position: absolute;
+    bottom: 7.5%;
+    right: 2.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    a {
+      width: 52px;
+      height: 52px;
+      background: #67c2c7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+      img {
+        transform: scale(1.1);
+      }
+      &:nth-child(2) {
+        background: #1cbbee;
+      }
+    }
+  }
 }
 
 @media (max-width: 1355px) {

@@ -4,7 +4,7 @@ import CodeInput from "./UIelements/CodeInput";
 import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-function Confirmation({ className }) {
+function Confirmation({ closeFn, className }) {
   // return active ? <CodeInput /> : <CodeInput />;
   const [active, setActive] = useState(false);
   const [time, setTime] = useState(10);
@@ -35,6 +35,7 @@ function Confirmation({ className }) {
       <Button
         onClick={() => {
           nav("/profile");
+          closeFn();
         }}
       >
         Войти в кабинет

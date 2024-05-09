@@ -6,7 +6,7 @@ import { useState } from "react";
 import Confirmation from "./Confirmation";
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function LogIn({ active, className }) {
+function LogIn({ active, setReg, reg, closeFn, className }) {
   const nav = useNavigate();
   const [sms, setSMS] = useState(false);
 
@@ -20,26 +20,31 @@ function LogIn({ active, className }) {
       </div>
       <TextInput placeholder={"Пароль"} type={"password"} />
 
-      <div className="flex items-center gap-[10px] mt-6 mb-[30px]">
+      <label
+        className="flex items-center gap-[10px] mt-6 mb-[30px] select-none cursor-pointer"
+        htmlFor="agree"
+      >
         <input
           type="checkbox"
-          className="w-6 h-6 bg-[#e4eaf3] border-0 outline-none rounded-[4px] cursor-pointer login__checkbox"
+          className="w-6 h-6 bg-[#e4eaf3] outline-none border-none"
+          id="agree"
         />
         <p className="text-sm leading-[1.71] font-light">
           Я согласен на обработку персональных данных
         </p>
-      </div>
+      </label>
 
       <Button
         onClick={() => {
           nav("/profile");
+          closeFn();
         }}
       >
         Войти в кабинет
       </Button>
 
       <p className="block text-center w-full text-[18px] font-light text-[#98a2b3] underline-offset-[5px] decoration-1 underline my-5">
-        <a href="#\">Забыли пароль? Восстановить.</a>
+        <a href="https://meedweff.uz">Забыли пароль? Восстановить.</a>
       </p>
 
       <p className="text-start">
@@ -48,8 +53,14 @@ function LogIn({ active, className }) {
       </p>
     </div>
   ) : (
-    <>
-      <Confirmation className={`${sms ? "" : "hidden"}`} />
+    <div className={`${reg ? "hidden" : ""}`}>
+      <Confirmation
+        className={`${sms ? "" : "hidden"}`}
+        closeFn={() => {
+          setSMS(false);
+          closeFn();
+        }}
+      />
       <div className={className + ` ${sms ? "hidden" : ""}`}>
         <h4 className="font-bold text-[clamp(24px,2vw,32px)] text-start">
           Вход в личный кабинет
@@ -60,17 +71,23 @@ function LogIn({ active, className }) {
 
         <Button
           onClick={() => {
-            console.log("asdasd");
             setSMS(true);
           }}
         >
           Получить СМС
         </Button>
         <p className="block text-center w-full text-[18px] font-light text-[#98a2b3] underline-offset-[5px] decoration-1 underline mt-5">
-          <a href="#\">Зарегистрироваться</a>
+          <a
+            onClick={() => {
+              setReg(true);
+            }}
+            className="cursor-pointer"
+          >
+            Зарегистрироваться
+          </a>
         </p>
       </div>
-    </>
+    </div>
   );
 }
 

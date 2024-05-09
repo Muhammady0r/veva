@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Showcase.css";
 
 import { Navigation, EffectCoverflow } from "swiper/modules";
@@ -14,6 +14,9 @@ import multiDot from "/src/assets/imgs/multiDot.png";
 import Bottle from "/src/assets/imgs/bottle.svg";
 import culler2 from "/src/assets/imgs/culler2.svg";
 import culler1 from "/src/assets/imgs/culler1.png";
+import userIcon from "/src/assets/imgs/UserIcon.png";
+import tgIcon from "/src/assets/imgs/telegram.png";
+import { Link } from "react-router-dom";
 
 const Showcase = ({ clickFn }) => {
   const [aboutOpened, setAOpened] = useState(false);
@@ -132,6 +135,14 @@ const Showcase = ({ clickFn }) => {
         <Button variant="" className={"banner__btn"} onClick={clickFn}>
           Заказать воду
         </Button>
+        <div className="bottom-links">
+          <Link to="/profile">
+            <img src={userIcon} alt="" />
+          </Link>
+          <a href="tg://resolve?domain=Meed0ff">
+            <img src={tgIcon} alt="" />
+          </a>
+        </div>
       </div>
       <Union />
     </>
