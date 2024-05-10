@@ -13,6 +13,7 @@ import Union from "./components/Union";
 import CatalogPage from "./components/CatalogPage";
 import LogIn from "./Modals/LogIn";
 import SignUp from "./Modals/SignUp";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -23,73 +24,67 @@ function App() {
 
   return (
     <>
-      <Header
+      <Layout
         profileFn={() => {
           setLogin(true);
         }}
-        openCer={() => {
+        cerFn={() => {
           setModal(true);
         }}
-      />
-      <Modal
-        active={active}
-        setActive={setActive}
-        height={"min"}
-        pr={"5px"}
-        opened={modal}
-        setOpened={setModal}
-        agreement
-        className={""}
       >
-        <Agreement
-          closeFn={() => {
-            setModal(false);
-          }}
-        />
-      </Modal>
+        <Modal
+          active={active}
+          setActive={setActive}
+          height={"min"}
+          pr={"5px"}
+          opened={modal}
+          setOpened={setModal}
+          agreement
+          className={""}
+        >
+          <Agreement
+            closeFn={() => {
+              setModal(false);
+            }}
+          />
+        </Modal>
 
-      <Modal
-        active={active}
-        setActive={setActive}
-        height={"min"}
-        pr={"5px"}
-        opened={login}
-        setOpened={setLogin}
-        reg={reg}
-        setReg={setReg}
-      >
-        <LogIn
-          active={!active}
-          setReg={setReg}
+        <Modal
+          active={active}
+          setActive={setActive}
+          height={"min"}
+          pr={"5px"}
+          opened={login}
+          setOpened={setLogin}
           reg={reg}
-          closeFn={() => {
-            setLogin(false);
-            setReg(false);
-          }}
-        />
-        <SignUp
-          className={`${reg && active ? "" : "hidden"}`}
-          closeFn={() => {
-            setLogin(false);
-            setReg(false);
-          }}
-        />
-      </Modal>
-      <Union className={`${loc.pathname == "/" ? "hidden" : ""}`} />
+          setReg={setReg}
+        >
+          <LogIn
+            active={!active}
+            setReg={setReg}
+            reg={reg}
+            closeFn={() => {
+              setLogin(false);
+              setReg(false);
+            }}
+          />
+          <SignUp
+            className={`${reg && active ? "" : "hidden"}`}
+            closeFn={() => {
+              setLogin(false);
+              setReg(false);
+            }}
+          />
+        </Modal>
 
-      <Routes>
-        <Route path="/" element={<HomePage setLogin={setLogin} />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-      </Routes>
+        <Union className={`${loc.pathname == "/" ? "hidden" : ""}`} />
 
-      <div className="container">
-        <Footer
-          cerFunc={() => {
-            setModal(true);
-          }}
-        />
-      </div>
+        <Routes>
+          <Route path="/" element={<HomePage setLogin={setLogin} />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+        </Routes>
+      </Layout>
     </>
   );
 }

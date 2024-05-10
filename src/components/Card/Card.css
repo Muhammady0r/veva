@@ -45,7 +45,7 @@
   display: block;
 }
 .card-item:hover .card-footer {
-  bottom: -150px;
+  bottom: -55%;
   transform: scale(1.005);
   opacity: 1;
 }

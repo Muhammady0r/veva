@@ -80,7 +80,7 @@ const Showcase = ({ clickFn }) => {
             modifier: 1,
             slideShadows: false,
           }}
-          loop={true}
+          // loop={true}
           navigation={{
             nextEl: ".swiper-next",
             prevEl: ".swiper-prev",
@@ -100,19 +100,6 @@ const Showcase = ({ clickFn }) => {
             </button>
           </div>
           <SwiperSlide>
-            <img src={Bottle} alt="" />
-            <button
-              onClick={() => {
-                setAOpened(!aboutOpened);
-              }}
-            >
-              <i className="fa-solid fa-plus"></i>
-            </button>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={culler2} alt="" className="scale-110" />
-          </SwiperSlide>
-          <SwiperSlide>
             <img src={culler1} alt="" />
           </SwiperSlide>
           <SwiperSlide>
@@ -128,9 +115,22 @@ const Showcase = ({ clickFn }) => {
           <SwiperSlide>
             <img src={culler2} alt="" className="scale-110" />
           </SwiperSlide>
+          {/* <SwiperSlide>
+            <img src={Bottle} alt="" />
+            <button
+              onClick={() => {
+                setAOpened(!aboutOpened);
+              }}
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={culler2} alt="" className="scale-110" />
+          </SwiperSlide>
           <SwiperSlide>
             <img src={culler1} alt="" />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
         <Button variant="" className={"banner__btn"} onClick={clickFn}>
           Заказать воду

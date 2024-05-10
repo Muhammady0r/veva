@@ -16,6 +16,7 @@
 
   .card-footer {
     position: absolute;
+    // height: 0;
     z-index: 4;
     bottom: -20%;
     opacity: 0;
@@ -50,7 +51,8 @@
     }
 
     .card-footer {
-      bottom: -150px;
+      // height: auto;
+      bottom: -55%;
       transform: scale(1.005);
       opacity: 1;
       //   display: block;
