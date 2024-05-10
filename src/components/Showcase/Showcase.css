@@ -197,9 +197,6 @@
   height: 425px;
   left: 59%;
 }
-.banner .about-opened ~ .overlay {
-  pointer-events: all;
-}
 .banner .about-opened ~ .swiper .swiper-wrapper .swiper-slide-active {
   transform: translateX(-125px) rotateY(15deg) !important;
 }
@@ -290,6 +287,7 @@
   }
   .banner .about-opened ~ .overlay {
     opacity: 1;
+    pointer-events: all;
   }
   .banner .about-opened button {
     opacity: 1;

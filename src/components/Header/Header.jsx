@@ -57,18 +57,14 @@ const Header = ({ profileFn, openCer, className }) => {
       locationfound(e) {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-        setPos(
-          `x:${`${e.latlng.lat}`.split(".")[0]} y:${
-            `${e.latlng.lng}`.split(".")[0]
-          }`
-        );
+        setPos(`x:${`${e.latlng.lat}`} y:${`${e.latlng.lng}`}`);
         setFound(true);
       },
     });
 
     return position === null ? null : (
       <Marker position={position}>
-        <Popup>F*ck you Muhahahahaha</Popup>
+        <Popup>F*ck you</Popup>
       </Marker>
     );
   }

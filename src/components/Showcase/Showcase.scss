@@ -196,9 +196,6 @@
     width: 425px;
     height: 425px;
     left: 59%;
-    & ~ .overlay {
-      pointer-events: all;
-    }
     & ~ .swiper {
       .swiper-wrapper {
         .swiper-slide-active {
@@ -330,7 +327,7 @@
       overflow: visible;
       & ~ .overlay {
         opacity: 1;
-        // pointer-events: all;
+        pointer-events: all;
       }
       button {
         opacity: 1;
