@@ -2,6 +2,7 @@ import "./Quality.css";
 import qualityIMG from "/src/assets/imgs/qualityIMG.png";
 import waveIMG from "/src/assets/imgs/wave.svg";
 import { Card, CardContent } from "@/components/ui/card";
+import BubblesImg from "../assets/imgs/bubbles.mp4"
 import {
   Carousel,
   CarouselContent,
@@ -119,12 +120,14 @@ export const Quality = () => {
 
         {/* <div className="quality__right 2xl:w-1/3 xl:w-1/3 lg:w-1/3 self-end flex md:w-full justify-center items-center sm:w-full"> */}
         <img
-          className="quality__img bg-red-10 2xl:block xl:block lg:block md:hidden sm:hidden"
+          className="quality__img bg-red-10 2xl:block xl:block lg:block md:hidden sm:hidden cursor-pointer"
           src={qualityIMG}
           alt=""
         />
+
+        <img className="bubbles" src="https://i.pinimg.com/originals/5d/ea/eb/5deaeb33a97005e24ce8ff7f8bcaf420.gif" alt="" />
         {/* </div> */}
       </div>
-    </section>
+    </section >
   );
 };
