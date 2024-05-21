@@ -1,6 +1,7 @@
 import React from "react";
 import MyCart from "./MyCart/MyCart";
 import Table from "./Table/Table";
+import { Information } from "./Information/Information";
 import TableMessage from "./TableMessages/TableMessage";
 import Tabs from "./Tabs";
 
@@ -18,7 +19,7 @@ const ProfilePage = () => {
         components={[
           <MyCart />,
           <Table />,
-          "Личная информация",
+          <Information />,
           <TableMessage />,
         ]}
       />

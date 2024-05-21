@@ -40,4 +40,21 @@
     .swipe-card {
         flex-basis: 50%;
     }
+
+    .bubbles {
+        display: none;
+    }
+}
+
+.quality__img:hover~.bubbles {
+    display: flex;
+}
+
+.bubbles {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
 }
