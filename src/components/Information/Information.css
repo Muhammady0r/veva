@@ -1,0 +1,103 @@
+.numberPhone {
+    vertical-align: top;
+}
+
+.information {
+    padding: 40px 0px;
+}
+
+.table {
+    margin-bottom: 40px;
+}
+
+.table>div {
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    gap: 40px;
+}
+
+.table>div>h5 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.table>div>h5:nth-child(1) {
+    font-weight: 300;
+}
+
+.information__heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.table>div:nth-child(odd) {
+    background: #F2F4F7;
+}
+
+.information__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px !important;
+}
+
+@media (max-width:800px) {
+    .information {
+        padding: 0px 0px 40px 0px;
+    }
+
+    .information__heading {
+        font-size: 28px;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    .table>div {
+        gap: 20px;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .information__button {
+        width: 100%;
+    }
+}
+
+@media (max-width:660px) {
+    .information__heading {
+        font-size: 24px;
+    }
+
+    .table>div>h5 {
+        font-size: 16px;
+    }
+
+    .information__button {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width:520px) {
+    .table>div {
+        gap: 0px;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .table>div>h5 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:440px) {
+    .table>div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .information__button {
+        font-size: 14px !important;
+    }
+}
