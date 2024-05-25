@@ -44,14 +44,16 @@ const MyCart = () => {
   const checkTime2 = useRef(null);
 
   function formatCurency(num) {
-    return `${num.toLocaleString("us-US", {
-      style: "currency",
-      currency: "UZS",
-    })}`
-      .replace("UZS", "")
-      .replaceAll(".00", "")
-      .replaceAll(",", " ")
-      .slice(1);
+    return (
+      `${num.toLocaleString("us-US", {
+        style: "currency",
+        currency: "UZS",
+      })}`
+        // .replace("UZS", "")
+        .replaceAll(",00", "")
+    );
+    // .replaceAll(",", " ")
+    // .slice(1);
   }
 
   return (

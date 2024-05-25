@@ -23,8 +23,8 @@ export const Footer = ({ cerFunc }) => {
             </div>
           </Link>
         </Button>
-        <div className="container grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-1 border-t-2 2xl:pt-8 xl:pt-8 lg:pt-6 md:pt-6 sm:pt-6 2xl:gap-12 xl:gap-12 lg:gap-8 md:gap-8 md:grid-cols-2 sm:grid-cols-2">
-          <div className="footer__left flex items-center 2xl:justify-between xl:justify-between lg:justify-center     2xl:gap-0 xl:gap-0 lg:gap-24 md:gap-3 md:justify-between 2xl:flex-row xl:flex-row lg:flex-row md:flex-col-reverse md:items-start sm:flex-col-reverse sm:items-start sm:gap-3 sm:justify-between">
+        <div className="grid justify-center 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-1 border-t-2 2xl:pt-8 xl:pt-8 lg:pt-6 md:pt-6 sm:pt-6 2xl:gap-12 xl:gap-12 lg:gap-8 md:gap-8 md:grid-cols-2 sm:grid-cols-2">
+          <div className="footer__left flex items-center 2xl:justify-between xl:justify-between lg:justify-between 2xl:gap-0 xl:gap-0 lg:gap-24 md:gap-3 md:justify-center 2xl:flex-row xl:flex-row lg:flex-row md:flex-col-reverse md:items-start sm:flex-col-reverse sm:items-start sm:gap-3 sm:justify-center">
             <Link
               to={"/"}
               className="footer__logo 2xl:block xl:block lg:block md:hidden sm:hidden"
@@ -55,7 +55,7 @@ export const Footer = ({ cerFunc }) => {
               </li>
             </ul>
           </div>
-          <div className="footer__right flex 2xl:justify-between xl:justify-between lg:justify-center 2xl:gap-0 xl:gap-0 lg:gap-60 md:justify-center md:gap-3 2xl:flex-row xl:flex-row lg:flex-row md:flex-col-reverse 2xl:items-center xl:items-center lg:items-center md:items-end sm:justify-center sm:flex-col-reverse sm:items-end sm:gap-3">
+          <div className="footer__right flex 2xl:justify-between xl:justify-between lg:justify-between 2xl:gap-0 xl:gap-0 lg:gap-60 md:justify-center md:gap-3 2xl:flex-row xl:flex-row lg:flex-row md:flex-col-reverse 2xl:items-center xl:items-center lg:items-center md:items-end sm:justify-center sm:flex-col-reverse sm:items-end sm:gap-3">
             <ul className="flex items-center justify-center 2xl:gap-3 xl:gap-3 lg:gap-3 md:gap-3 sm:gap-2">
               <li>
                 <Link

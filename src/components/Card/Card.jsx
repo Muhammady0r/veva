@@ -28,14 +28,16 @@ const CatalogCard = ({ isCuller }) => {
   );
 
   function formatCurency(num) {
-    return `${num.toLocaleString("us-US", {
-      style: "currency",
-      currency: "UZS",
-    })}`
-      .replace("UZS", "")
-      .replaceAll(".00", "")
-      .replaceAll(",", ".")
-      .slice(1);
+    return (
+      `${num.toLocaleString("us-US", {
+        style: "currency",
+        currency: "UZS",
+      })}`
+        // .replace("UZS", "")
+        .replaceAll(",00", "")
+    );
+    // .replaceAll(",", " ")
+    // .slice(1);
   }
 
   return (
@@ -112,7 +114,6 @@ const CatalogCard = ({ isCuller }) => {
                       {formatCurency(
                         Number(counter) * (isCuller ? 2699000 : 15000)
                       )}{" "}
-                      сум
                     </h4>
                   </div>
                 </div>
@@ -166,7 +167,6 @@ const CatalogCard = ({ isCuller }) => {
                       {formatCurency(
                         Number(counter) * (isCuller ? 2699000 : 15000)
                       )}{" "}
-                      сум
                     </h4>
                   </div>
                 </div>
@@ -267,7 +267,6 @@ const CatalogCard = ({ isCuller }) => {
                   {formatCurency(
                     Number(counter) * (isCuller ? 2699000 : 15000)
                   )}{" "}
-                  сум
                 </h4>
               </div>
             </div>

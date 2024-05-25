@@ -1,11 +1,4 @@
 @media (max-width: 640px) {
-    .footer>.container {
-        padding-top: 30px;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 30px;
-    }
-
     .footer__left {
         gap: 20px;
         flex-direction: column-reverse;

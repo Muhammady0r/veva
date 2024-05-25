@@ -7,14 +7,16 @@ const ProductCard = ({ setCount, setTotalPrice }) => {
   const [count, setCount2] = useState(3);
 
   function formatCurency(num) {
-    return `${num.toLocaleString("us-US", {
-      style: "currency",
-      currency: "UZS",
-    })}`
-      .replace("UZS", "")
-      .replaceAll(".00", "")
-      .replaceAll(",", " ")
-      .slice(1);
+    return (
+      `${num.toLocaleString("us-US", {
+        style: "currency",
+        currency: "UZS",
+      })}`
+        // .replace("UZS", "")
+        .replaceAll(",00", "")
+    );
+    // .replaceAll(",", " ")
+    // .slice(1);
   }
 
   useEffect(() => {
@@ -49,11 +51,11 @@ const ProductCard = ({ setCount, setTotalPrice }) => {
           </div>
           <div className="price">
             <p>Стоимость за 1 единицу:</p>
-            <h4>{formatCurency(one)} сум</h4>
+            <h4>{formatCurency(one)}</h4>
           </div>
           <div className="full-price">
             <p>Итоговая стоимость:</p>
-            <h4>{formatCurency(one * count)} сум</h4>
+            <h4>{formatCurency(one * count)}</h4>
           </div>
         </div>
       </div>
